@@ -1,18 +1,21 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Textures/knight.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/B_infantry_popup.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/InfantryPopup.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/InfantryPanel.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/RangedPanel.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/mounted_popup.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/MountedPanel.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/SiegePanel.gd" type="Script" id=8]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/ranged_popup.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/RangedPanel.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/siege_popup.gd" type="Script" id=12]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 
-[sub_resource type="Theme" id=1]
+[sub_resource type="Theme" id=2]
 PopupMenu/icons/ = null
 
 [node name="Main" type="Node2D"]
@@ -37,7 +40,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
-[node name="InfantryPanel" type="Panel" parent="TroopBox/Infantry"]
+[node name="BackgroundPanel" type="Panel" parent="TroopBox/Infantry"]
 margin_right = 334.0
 margin_bottom = 148.0
 rect_min_size = Vector2( 100, 100 )
@@ -47,21 +50,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TroopBox/Infantry"]
+[node name="OuterBox" type="HBoxContainer" parent="TroopBox/Infantry"]
 margin_right = 334.0
 margin_bottom = 148.0
 
-[node name="MiddleSpace" type="MarginContainer" parent="TroopBox/Infantry/HBoxContainer"]
+[node name="LeftPanel" type="MarginContainer" parent="TroopBox/Infantry/OuterBox"]
 margin_right = 134.0
 margin_bottom = 148.0
 size_flags_horizontal = 3
 
-[node name="TroopDisplay" type="Panel" parent="TroopBox/Infantry/HBoxContainer/MiddleSpace"]
+[node name="TroopDisplay" type="Panel" parent="TroopBox/Infantry/OuterBox/LeftPanel"]
 margin_right = 134.0
 margin_bottom = 148.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="TroopBox/Infantry/HBoxContainer/MiddleSpace"]
+[node name="TroopSprite" type="NinePatchRect" parent="TroopBox/Infantry/OuterBox/LeftPanel"]
 margin_right = 134.0
 margin_bottom = 148.0
 size_flags_horizontal = 3
@@ -71,7 +74,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TroopBox/Infantry/HBoxContainer"]
+[node name="MiddleBox" type="VBoxContainer" parent="TroopBox/Infantry/OuterBox"]
 margin_left = 138.0
 margin_right = 273.0
 margin_bottom = 148.0
@@ -81,13 +84,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MiddleSpace2" type="MarginContainer" parent="TroopBox/Infantry/HBoxContainer/VBoxContainer"]
+[node name="MiddleSpace2" type="MarginContainer" parent="TroopBox/Infantry/OuterBox/MiddleBox"]
 margin_right = 135.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="L_troop_type" type="Label" parent="TroopBox/Infantry/HBoxContainer/VBoxContainer"]
+[node name="L_troop_type" type="Label" parent="TroopBox/Infantry/OuterBox/MiddleBox"]
 margin_top = 57.0
 margin_right = 135.0
 margin_bottom = 71.0
@@ -98,7 +101,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="L_troop_name" type="Label" parent="TroopBox/Infantry/HBoxContainer/VBoxContainer"]
+[node name="L_troop_name" type="Label" parent="TroopBox/Infantry/OuterBox/MiddleBox"]
 margin_top = 102.0
 margin_right = 135.0
 margin_bottom = 116.0
@@ -109,7 +112,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="L_troop_count" type="Label" parent="TroopBox/Infantry/HBoxContainer/VBoxContainer"]
+[node name="L_troop_count" type="Label" parent="TroopBox/Infantry/OuterBox/MiddleBox"]
 margin_top = 134.0
 margin_right = 135.0
 margin_bottom = 148.0
@@ -119,7 +122,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InfantryData" type="VBoxContainer" parent="TroopBox/Infantry/HBoxContainer"]
+[node name="RightBox" type="VBoxContainer" parent="TroopBox/Infantry/OuterBox"]
 margin_left = 277.0
 margin_right = 334.0
 margin_bottom = 148.0
@@ -128,16 +131,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TopBox" type="HBoxContainer" parent="TroopBox/Infantry/HBoxContainer/InfantryData"]
+[node name="TopBox" type="HBoxContainer" parent="TroopBox/Infantry/OuterBox/RightBox"]
 margin_right = 57.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="TroopBox/Infantry/HBoxContainer/InfantryData/TopBox"]
+[node name="MarginContainer" type="MarginContainer" parent="TroopBox/Infantry/OuterBox/RightBox/TopBox"]
 margin_bottom = 20.0
 size_flags_horizontal = 3
 
-[node name="B_troop_popup" type="Button" parent="TroopBox/Infantry/HBoxContainer/InfantryData/TopBox"]
+[node name="B_troop_popup" type="Button" parent="TroopBox/Infantry/OuterBox/RightBox/TopBox"]
 margin_left = 4.0
 margin_right = 57.0
 margin_bottom = 20.0
@@ -148,25 +151,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="troop_popup" type="PopupMenu" parent="TroopBox/Infantry/HBoxContainer/InfantryData/TopBox/B_troop_popup"]
+[node name="troop_popup" type="PopupMenu" parent="TroopBox/Infantry/OuterBox/RightBox/TopBox/B_troop_popup"]
 margin_left = 115.906
 margin_top = 4.40515
 margin_right = 283.906
 margin_bottom = 87.4052
-theme = SubResource( 1 )
+theme = SubResource( 2 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MiddleSpace3" type="MarginContainer" parent="TroopBox/Infantry/HBoxContainer/InfantryData"]
+[node name="MiddleSpace3" type="MarginContainer" parent="TroopBox/Infantry/OuterBox/RightBox"]
 margin_top = 24.0
 margin_right = 57.0
 margin_bottom = 124.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="BottomBox" type="HBoxContainer" parent="TroopBox/Infantry/HBoxContainer/InfantryData"]
+[node name="BottomBox" type="HBoxContainer" parent="TroopBox/Infantry/OuterBox/RightBox"]
 margin_top = 128.0
 margin_right = 57.0
 margin_bottom = 148.0
@@ -174,12 +177,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SpriteContainer" type="MarginContainer" parent="TroopBox/Infantry/HBoxContainer/InfantryData/BottomBox"]
+[node name="SpriteContainer" type="MarginContainer" parent="TroopBox/Infantry/OuterBox/RightBox/BottomBox"]
 margin_right = 13.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 
-[node name="B_info" type="Button" parent="TroopBox/Infantry/HBoxContainer/InfantryData/BottomBox"]
+[node name="B_info" type="Button" parent="TroopBox/Infantry/OuterBox/RightBox/BottomBox"]
 margin_left = 17.0
 margin_right = 33.0
 margin_bottom = 20.0
@@ -188,7 +191,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="B_add_troop" type="Button" parent="TroopBox/Infantry/HBoxContainer/InfantryData/BottomBox"]
+[node name="B_add_troop" type="Button" parent="TroopBox/Infantry/OuterBox/RightBox/BottomBox"]
 margin_left = 37.0
 margin_right = 57.0
 margin_bottom = 20.0
@@ -197,163 +200,518 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RangedPanel" type="Panel" parent="TroopBox"]
+[node name="Ranged" type="MarginContainer" parent="TroopBox"]
 margin_top = 152.0
 margin_right = 334.0
 margin_bottom = 300.0
-rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 11 )
+
+[node name="BackgroundPanel" type="Panel" parent="TroopBox/Ranged"]
+margin_right = 334.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OuterBox" type="HBoxContainer" parent="TroopBox/Ranged"]
+margin_right = 334.0
+margin_bottom = 148.0
+
+[node name="LeftPanel" type="MarginContainer" parent="TroopBox/Ranged/OuterBox"]
+margin_right = 134.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+
+[node name="TroopDisplay" type="Panel" parent="TroopBox/Ranged/OuterBox/LeftPanel"]
+margin_right = 134.0
+margin_bottom = 148.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="TroopSprite" type="NinePatchRect" parent="TroopBox/Ranged/OuterBox/LeftPanel"]
+margin_right = 134.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleBox" type="VBoxContainer" parent="TroopBox/Ranged/OuterBox"]
+margin_left = 138.0
+margin_right = 273.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleSpace2" type="MarginContainer" parent="TroopBox/Ranged/OuterBox/MiddleBox"]
+margin_right = 135.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="L_troop_type" type="Label" parent="TroopBox/Ranged/OuterBox/MiddleBox"]
+margin_top = 57.0
+margin_right = 135.0
+margin_bottom = 71.0
+size_flags_vertical = 6
+text = "[Troop type]"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L_troop_name" type="Label" parent="TroopBox/Ranged/OuterBox/MiddleBox"]
+margin_top = 102.0
+margin_right = 135.0
+margin_bottom = 116.0
+size_flags_vertical = 6
+text = "[Troop Name]"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L_troop_count" type="Label" parent="TroopBox/Ranged/OuterBox/MiddleBox"]
+margin_top = 134.0
+margin_right = 135.0
+margin_bottom = 148.0
+text = "[Troop Count]"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightBox" type="VBoxContainer" parent="TroopBox/Ranged/OuterBox"]
+margin_left = 277.0
+margin_right = 334.0
+margin_bottom = 148.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopBox" type="HBoxContainer" parent="TroopBox/Ranged/OuterBox/RightBox"]
+margin_right = 57.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TroopBox/Ranged/OuterBox/RightBox/TopBox"]
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="B_troop_popup" type="Button" parent="TroopBox/Ranged/OuterBox/RightBox/TopBox"]
+margin_left = 4.0
+margin_right = 57.0
+margin_bottom = 20.0
+size_flags_vertical = 4
+text = "troops"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="troop_popup" type="PopupMenu" parent="TroopBox/Ranged/OuterBox/RightBox/TopBox/B_troop_popup"]
+margin_left = 115.906
+margin_top = 4.40515
+margin_right = 283.906
+margin_bottom = 87.4052
+theme = SubResource( 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleSpace3" type="MarginContainer" parent="TroopBox/Ranged/OuterBox/RightBox"]
+margin_top = 24.0
+margin_right = 57.0
+margin_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BottomBox" type="HBoxContainer" parent="TroopBox/Ranged/OuterBox/RightBox"]
+margin_top = 128.0
+margin_right = 57.0
+margin_bottom = 148.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteContainer" type="MarginContainer" parent="TroopBox/Ranged/OuterBox/RightBox/BottomBox"]
+margin_right = 13.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="B_info" type="Button" parent="TroopBox/Ranged/OuterBox/RightBox/BottomBox"]
+margin_left = 17.0
+margin_right = 33.0
+margin_bottom = 20.0
+text = "i"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_add_troop" type="Button" parent="TroopBox/Ranged/OuterBox/RightBox/BottomBox"]
+margin_left = 37.0
+margin_right = 57.0
+margin_bottom = 20.0
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mounted" type="MarginContainer" parent="TroopBox"]
+margin_top = 304.0
+margin_right = 334.0
+margin_bottom = 452.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 7 )
+
+[node name="BackgroundPanel" type="Panel" parent="TroopBox/Mounted"]
+margin_right = 334.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OuterBox" type="HBoxContainer" parent="TroopBox/Mounted"]
+margin_right = 334.0
+margin_bottom = 148.0
+
+[node name="LeftPanel" type="MarginContainer" parent="TroopBox/Mounted/OuterBox"]
+margin_right = 134.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+
+[node name="TroopDisplay" type="Panel" parent="TroopBox/Mounted/OuterBox/LeftPanel"]
+margin_right = 134.0
+margin_bottom = 148.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="TroopSprite" type="NinePatchRect" parent="TroopBox/Mounted/OuterBox/LeftPanel"]
+margin_right = 134.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleBox" type="VBoxContainer" parent="TroopBox/Mounted/OuterBox"]
+margin_left = 138.0
+margin_right = 273.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleSpace2" type="MarginContainer" parent="TroopBox/Mounted/OuterBox/MiddleBox"]
+margin_right = 135.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="L_troop_type" type="Label" parent="TroopBox/Mounted/OuterBox/MiddleBox"]
+margin_top = 57.0
+margin_right = 135.0
+margin_bottom = 71.0
+size_flags_vertical = 6
+text = "[Troop type]"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L_troop_name" type="Label" parent="TroopBox/Mounted/OuterBox/MiddleBox"]
+margin_top = 102.0
+margin_right = 135.0
+margin_bottom = 116.0
+size_flags_vertical = 6
+text = "[Troop Name]"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L_troop_count" type="Label" parent="TroopBox/Mounted/OuterBox/MiddleBox"]
+margin_top = 134.0
+margin_right = 135.0
+margin_bottom = 148.0
+text = "[Troop Count]"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightBox" type="VBoxContainer" parent="TroopBox/Mounted/OuterBox"]
+margin_left = 277.0
+margin_right = 334.0
+margin_bottom = 148.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopBox" type="HBoxContainer" parent="TroopBox/Mounted/OuterBox/RightBox"]
+margin_right = 57.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TroopBox/Mounted/OuterBox/RightBox/TopBox"]
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="B_troop_popup" type="Button" parent="TroopBox/Mounted/OuterBox/RightBox/TopBox"]
+margin_left = 4.0
+margin_right = 57.0
+margin_bottom = 20.0
+size_flags_vertical = 4
+text = "troops"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="troop_popup" type="PopupMenu" parent="TroopBox/Mounted/OuterBox/RightBox/TopBox/B_troop_popup"]
+margin_left = 115.906
+margin_top = 4.40515
+margin_right = 283.906
+margin_bottom = 87.4052
+theme = SubResource( 2 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="L_troop_type" type="Label" parent="TroopBox/RangedPanel"]
-margin_left = 4.24265
-margin_top = 1.41422
-margin_right = 80.2426
-margin_bottom = 15.4142
-text = "[Troop type]"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="L_troop_name" type="Label" parent="TroopBox/RangedPanel"]
-margin_left = 4.24265
-margin_top = 17.6777
-margin_right = 90.2426
-margin_bottom = 31.6777
-text = "[Troop Name]"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="L_troop_count" type="Label" parent="TroopBox/RangedPanel"]
-margin_left = 4.94977
-margin_top = 36.0625
-margin_right = 89.9498
-margin_bottom = 50.0625
-text = "[Troop Count]"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="B_add_troop" type="Button" parent="TroopBox/RangedPanel"]
-margin_left = 168.287
-margin_top = 66.5331
-margin_right = 192.287
-margin_bottom = 86.5331
-text = "+"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MountedPanel" type="Panel" parent="TroopBox"]
-margin_top = 304.0
-margin_right = 334.0
-margin_bottom = 452.0
-rect_min_size = Vector2( 0, 100 )
+[node name="MiddleSpace3" type="MarginContainer" parent="TroopBox/Mounted/OuterBox/RightBox"]
+margin_top = 24.0
+margin_right = 57.0
+margin_bottom = 124.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 7 )
+
+[node name="BottomBox" type="HBoxContainer" parent="TroopBox/Mounted/OuterBox/RightBox"]
+margin_top = 128.0
+margin_right = 57.0
+margin_bottom = 148.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="L_troop_type" type="Label" parent="TroopBox/MountedPanel"]
-margin_left = 4.24265
-margin_top = 1.41422
-margin_right = 80.2426
-margin_bottom = 15.4142
-text = "[Troop type]"
+[node name="SpriteContainer" type="MarginContainer" parent="TroopBox/Mounted/OuterBox/RightBox/BottomBox"]
+margin_right = 13.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="B_info" type="Button" parent="TroopBox/Mounted/OuterBox/RightBox/BottomBox"]
+margin_left = 17.0
+margin_right = 33.0
+margin_bottom = 20.0
+text = "i"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="L_troop_name" type="Label" parent="TroopBox/MountedPanel"]
-margin_left = 4.24265
-margin_top = 17.6777
-margin_right = 90.2426
-margin_bottom = 31.6777
-text = "[Troop Name]"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="L_troop_count" type="Label" parent="TroopBox/MountedPanel"]
-margin_left = 4.94977
-margin_top = 36.0625
-margin_right = 89.9498
-margin_bottom = 50.0625
-text = "[Troop Count]"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="B_add_troop" type="Button" parent="TroopBox/MountedPanel"]
-margin_left = 164.556
-margin_top = 64.4142
-margin_right = 188.556
-margin_bottom = 84.4142
+[node name="B_add_troop" type="Button" parent="TroopBox/Mounted/OuterBox/RightBox/BottomBox"]
+margin_left = 37.0
+margin_right = 57.0
+margin_bottom = 20.0
 text = "+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SiegePanel" type="Panel" parent="TroopBox"]
+[node name="Siege" type="MarginContainer" parent="TroopBox"]
 margin_top = 456.0
 margin_right = 334.0
 margin_bottom = 605.0
-rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 8 )
+
+[node name="BackgroundPanel" type="Panel" parent="TroopBox/Siege"]
+margin_right = 334.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="L_troop_type" type="Label" parent="TroopBox/SiegePanel"]
-margin_left = 4.24265
-margin_top = 1.41422
-margin_right = 80.2426
-margin_bottom = 15.4142
+[node name="OuterBox" type="HBoxContainer" parent="TroopBox/Siege"]
+margin_right = 334.0
+margin_bottom = 149.0
+
+[node name="LeftPanel" type="MarginContainer" parent="TroopBox/Siege/OuterBox"]
+margin_right = 134.0
+margin_bottom = 149.0
+size_flags_horizontal = 3
+
+[node name="TroopDisplay" type="Panel" parent="TroopBox/Siege/OuterBox/LeftPanel"]
+margin_right = 134.0
+margin_bottom = 149.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="TroopSprite" type="NinePatchRect" parent="TroopBox/Siege/OuterBox/LeftPanel"]
+margin_right = 134.0
+margin_bottom = 149.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleBox" type="VBoxContainer" parent="TroopBox/Siege/OuterBox"]
+margin_left = 138.0
+margin_right = 273.0
+margin_bottom = 149.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleSpace2" type="MarginContainer" parent="TroopBox/Siege/OuterBox/MiddleBox"]
+margin_right = 135.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="L_troop_type" type="Label" parent="TroopBox/Siege/OuterBox/MiddleBox"]
+margin_top = 58.0
+margin_right = 135.0
+margin_bottom = 72.0
+size_flags_vertical = 6
 text = "[Troop type]"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="L_troop_name" type="Label" parent="TroopBox/SiegePanel"]
-margin_left = 4.24265
-margin_top = 17.6777
-margin_right = 90.2426
-margin_bottom = 31.6777
+[node name="L_troop_name" type="Label" parent="TroopBox/Siege/OuterBox/MiddleBox"]
+margin_top = 103.0
+margin_right = 135.0
+margin_bottom = 117.0
+size_flags_vertical = 6
 text = "[Troop Name]"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="L_troop_count" type="Label" parent="TroopBox/SiegePanel"]
-margin_left = 4.94977
-margin_top = 36.0625
-margin_right = 89.9498
-margin_bottom = 50.0625
+[node name="L_troop_count" type="Label" parent="TroopBox/Siege/OuterBox/MiddleBox"]
+margin_top = 135.0
+margin_right = 135.0
+margin_bottom = 149.0
 text = "[Troop Count]"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="B_add_troop" type="Button" parent="TroopBox/SiegePanel"]
-margin_left = 164.556
-margin_top = 64.4142
-margin_right = 188.556
-margin_bottom = 84.4142
+[node name="RightBox" type="VBoxContainer" parent="TroopBox/Siege/OuterBox"]
+margin_left = 277.0
+margin_right = 334.0
+margin_bottom = 149.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopBox" type="HBoxContainer" parent="TroopBox/Siege/OuterBox/RightBox"]
+margin_right = 57.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TroopBox/Siege/OuterBox/RightBox/TopBox"]
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="B_troop_popup" type="Button" parent="TroopBox/Siege/OuterBox/RightBox/TopBox"]
+margin_left = 4.0
+margin_right = 57.0
+margin_bottom = 20.0
+size_flags_vertical = 4
+text = "troops"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="troop_popup" type="PopupMenu" parent="TroopBox/Siege/OuterBox/RightBox/TopBox/B_troop_popup"]
+margin_left = 115.906
+margin_top = 4.40515
+margin_right = 283.906
+margin_bottom = 87.4052
+theme = SubResource( 2 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleSpace3" type="MarginContainer" parent="TroopBox/Siege/OuterBox/RightBox"]
+margin_top = 24.0
+margin_right = 57.0
+margin_bottom = 125.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BottomBox" type="HBoxContainer" parent="TroopBox/Siege/OuterBox/RightBox"]
+margin_top = 129.0
+margin_right = 57.0
+margin_bottom = 149.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteContainer" type="MarginContainer" parent="TroopBox/Siege/OuterBox/RightBox/BottomBox"]
+margin_right = 13.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="B_info" type="Button" parent="TroopBox/Siege/OuterBox/RightBox/BottomBox"]
+margin_left = 17.0
+margin_right = 33.0
+margin_bottom = 20.0
+text = "i"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B_add_troop" type="Button" parent="TroopBox/Siege/OuterBox/RightBox/BottomBox"]
+margin_left = 37.0
+margin_right = 57.0
+margin_bottom = 20.0
 text = "+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="id_pressed" from="TroopBox/Infantry/HBoxContainer/InfantryData/TopBox/B_troop_popup/troop_popup" to="TroopBox/Infantry" method="_on_troop_popup_id_pressed"]
-[connection signal="pressed" from="TroopBox/Infantry/HBoxContainer/InfantryData/BottomBox/B_add_troop" to="TroopBox/Infantry" method="_on_B_add_troop_pressed"]
-[connection signal="pressed" from="TroopBox/RangedPanel/B_add_troop" to="TroopBox/RangedPanel" method="_on_B_add_troop_pressed"]
-[connection signal="pressed" from="TroopBox/MountedPanel/B_add_troop" to="TroopBox/MountedPanel" method="_on_B_add_troop_pressed"]
-[connection signal="pressed" from="TroopBox/SiegePanel/B_add_troop" to="TroopBox/SiegePanel" method="_on_B_add_troop_pressed"]
+[connection signal="about_to_show" from="TroopBox/Infantry/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" to="TroopBox/Infantry/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" method="_on_troop_popup_about_to_show"]
+[connection signal="id_pressed" from="TroopBox/Infantry/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" to="TroopBox/Infantry" method="_on_troop_popup_id_pressed"]
+[connection signal="pressed" from="TroopBox/Infantry/OuterBox/RightBox/BottomBox/B_add_troop" to="TroopBox/Infantry" method="_on_B_add_troop_pressed"]
+[connection signal="about_to_show" from="TroopBox/Ranged/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" to="TroopBox/Ranged/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" method="_on_troop_popup_about_to_show"]
+[connection signal="id_pressed" from="TroopBox/Ranged/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" to="TroopBox/Ranged" method="_on_troop_popup_id_pressed"]
+[connection signal="pressed" from="TroopBox/Ranged/OuterBox/RightBox/BottomBox/B_add_troop" to="TroopBox/Ranged" method="_on_B_add_troop_pressed"]
+[connection signal="about_to_show" from="TroopBox/Mounted/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" to="TroopBox/Mounted/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" method="_on_troop_popup_about_to_show"]
+[connection signal="id_pressed" from="TroopBox/Mounted/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" to="TroopBox/Mounted" method="_on_troop_popup_id_pressed"]
+[connection signal="pressed" from="TroopBox/Mounted/OuterBox/RightBox/BottomBox/B_add_troop" to="TroopBox/Mounted" method="_on_B_add_troop_pressed"]
+[connection signal="about_to_show" from="TroopBox/Siege/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" to="TroopBox/Siege/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" method="_on_troop_popup_about_to_show"]
+[connection signal="id_pressed" from="TroopBox/Siege/OuterBox/RightBox/TopBox/B_troop_popup/troop_popup" to="TroopBox/Siege" method="_on_troop_popup_id_pressed"]
+[connection signal="pressed" from="TroopBox/Siege/OuterBox/RightBox/BottomBox/B_add_troop" to="TroopBox/Siege" method="_on_B_add_troop_pressed"]
