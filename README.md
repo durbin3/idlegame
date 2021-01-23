@@ -28,8 +28,19 @@
             <li>Draw new hex tileset</li>
         </ul>
     </li>
+    <li><h2>Future Features</h2>
+        <ul>
+            <li>Tower Defense mode</li>
+            <li>Biomes on map</li>
+            <li>Map tiles represented in village and tower defense section</li>
+            <li>tiles have functional differences</li>
+            <li>village zoomed into from map</li>
+            <li>Both tower attack and tower defense</li>
+            <li>Roads on map have function</li>
+        </ul>
+    </li>
 </ul>
-<h1> Bugs <h1>
+<h1> Bugs </h1>
 <ul>
     <li>Going to main menu and clicking new game resets the text but not money or troop count and crashes on clicking any unlock</li>
 </ul>
