@@ -23,12 +23,12 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="ButtonContainer"]
-margin_right = 1013.0
+margin_right = 1012.0
 margin_bottom = 98.0
 theme = ExtResource( 1 )
 
 [node name="TopButtons" type="HBoxContainer" parent="ButtonContainer"]
-margin_right = 1013.0
+margin_right = 1012.0
 margin_bottom = 98.0
 script = ExtResource( 3 )
 
@@ -71,7 +71,7 @@ margin_right = 431.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="ButtonContainer/TopButtons/MarginContainer2"]
+[node name="Upgrades" type="Button" parent="ButtonContainer/TopButtons/MarginContainer2"]
 margin_right = 141.0
 margin_bottom = 98.0
 grow_horizontal = 2
@@ -88,12 +88,12 @@ __meta__ = {
 
 [node name="MarginContainer3" type="MarginContainer" parent="ButtonContainer/TopButtons"]
 margin_left = 435.0
-margin_right = 577.0
+margin_right = 576.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 
 [node name="Button" type="Button" parent="ButtonContainer/TopButtons/MarginContainer3"]
-margin_right = 142.0
+margin_right = 141.0
 margin_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -108,8 +108,8 @@ __meta__ = {
 }
 
 [node name="MarginContainer4" type="MarginContainer" parent="ButtonContainer/TopButtons"]
-margin_left = 581.0
-margin_right = 722.0
+margin_left = 580.0
+margin_right = 721.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 
@@ -129,8 +129,8 @@ __meta__ = {
 }
 
 [node name="MarginContainer5" type="MarginContainer" parent="ButtonContainer/TopButtons"]
-margin_left = 726.0
-margin_right = 867.0
+margin_left = 725.0
+margin_right = 866.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 
@@ -150,8 +150,8 @@ __meta__ = {
 }
 
 [node name="MarginContainer7" type="MarginContainer" parent="ButtonContainer/TopButtons"]
-margin_left = 871.0
-margin_right = 1013.0
+margin_left = 870.0
+margin_right = 1012.0
 margin_bottom = 98.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -187,15 +187,15 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="BalanceContainer"]
 margin_right = 1032.0
-margin_bottom = 106.0
+margin_bottom = 105.0
 
 [node name="BalanceSort" type="HBoxContainer" parent="BalanceContainer"]
 margin_right = 1032.0
-margin_bottom = 106.0
+margin_bottom = 105.0
 
 [node name="Money_container" type="HBoxContainer" parent="BalanceContainer/BalanceSort"]
 margin_right = 341.0
-margin_bottom = 106.0
+margin_bottom = 105.0
 size_flags_horizontal = 3
 
 [node name="Money_Amount" type="Label" parent="BalanceContainer/BalanceSort/Money_container"]
@@ -213,7 +213,7 @@ __meta__ = {
 [node name="Territory_container" type="HBoxContainer" parent="BalanceContainer/BalanceSort"]
 margin_left = 345.0
 margin_right = 686.0
-margin_bottom = 106.0
+margin_bottom = 105.0
 size_flags_horizontal = 3
 
 [node name="Territory" type="Label" parent="BalanceContainer/BalanceSort/Territory_container"]
@@ -244,7 +244,7 @@ __meta__ = {
 [node name="Troop_container" type="HBoxContainer" parent="BalanceContainer/BalanceSort"]
 margin_left = 690.0
 margin_right = 1032.0
-margin_bottom = 106.0
+margin_bottom = 105.0
 size_flags_horizontal = 3
 
 [node name="Troops" type="Label" parent="BalanceContainer/BalanceSort/Troop_container"]
@@ -274,5 +274,6 @@ __meta__ = {
 }
 [connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer/Territory" to="ButtonContainer/TopButtons" method="_on_Territory_pressed"]
 [connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer6/Village" to="ButtonContainer/TopButtons" method="_on_Village_pressed"]
+[connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer2/Upgrades" to="ButtonContainer/TopButtons" method="_on_Upgrades_pressed"]
 [connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer5/Menu" to="ButtonContainer/TopButtons" method="_on_Menu_pressed"]
 [connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer7/Exit" to="ButtonContainer/TopButtons" method="_on_Exit_pressed"]
