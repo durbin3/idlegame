@@ -23,11 +23,20 @@ func update_panel():
 	find_node("L_troop_count").text = str(troop_selected.count) + " Troops"
 	
 
-func _on_troop_popup_id_pressed(id):
-	troop_selected = Data.infantry[id]
-	update_panel()
 
 
 func _on_B_add_troop_pressed():
 	troop_selected.count += 1
 	update_panel()
+
+func _on_troop_popup_id_pressed(id):
+	troop_selected = Data.infantry[id]
+	update_panel()
+
+func _on_troop_popup_about_to_show():
+	var x = find_node("troop_popup")
+	x.clear()
+	for troop in Data.infantry:
+		print(troop.name)
+		x.add_item(str(troop.name))
+
