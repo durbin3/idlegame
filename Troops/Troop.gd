@@ -9,6 +9,7 @@ var xp = 0
 var level = 0
 var count = 0
 var mult = 1
+var price = 0
 
 
 # Called when the node enters the scene tree for the first time.
