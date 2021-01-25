@@ -18,7 +18,6 @@ margin_top = 17.6216
 margin_right = 1500.59
 margin_bottom = 115.622
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -260,7 +259,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Troop_amount" type="Label" parent="BalanceContainer/BalanceSort/Troop_container"]
+[node name="Troop_Amount" type="Label" parent="BalanceContainer/BalanceSort/Troop_container"]
 margin_left = 147.0
 margin_top = 29.0
 margin_right = 186.0

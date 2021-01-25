@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Building",
+"language": "GDScript",
+"path": "res://Data/Buildings/Building.gd"
+}, {
 "base": "Troop",
 "class": "Infantry",
 "language": "GDScript",
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://Troops/Troop.gd"
 } ]
 _global_script_class_icons={
+"Building": "",
 "Infantry": "",
 "Mounted": "",
 "Ranged": "",

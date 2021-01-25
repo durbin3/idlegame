@@ -14,18 +14,20 @@ var money = 50000
 var strength = 0
 var territory = 0
 
+var buildings = []
+
 # Called when the node enters the scene tree for the first time.
-	
+
 func _ready():
-	# loop through infantry and add them to the infantry array	
+	# loop through infantry and add them to the infantry array
 	unlock_defaults()
 	add_defaults()
-	
+
 	pass # Replace with function body.
 
 func unlock_defaults():
 	unl_Inf.append(get_child(0).get_child(0))
-	unl_Inf.append(get_child(0).get_child(1))
+
 
 
 func add_defaults():
@@ -37,6 +39,8 @@ func add_defaults():
 		mounted.append(troop)
 	for troop in get_child(3).get_children():
 		siege.append(troop)
+	for building in get_child(4).get_children():
+		buildings.append(building)
 
 
 func unlock_ranged():
@@ -57,7 +61,26 @@ func unlock_siege():
 	for x in range(num_siege + 1):
 		unl_Sie.append(siege[x])
 
+func unlock_troop(type, name):
+	if type == "infantry":
+		for troop in infantry:
+			if troop.name == name:
+				unl_Inf.append(troop)
+	if type == "ranged":
+		for troop in ranged:
+			if troop.name == name:
+				unl_Ran.append(troop)
 
+	if type == "mounted":
+		for troop in mounted:
+			if troop.name == name:
+				unl_Cav.append(troop)
+
+	if type == "siege":
+		for troop in siege:
+			if troop.name == name:
+				unl_Sie.append(troop)
+	pass
 
 
 

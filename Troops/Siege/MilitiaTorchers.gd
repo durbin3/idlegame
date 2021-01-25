@@ -10,4 +10,4 @@ func _ready():
 	damage = 50
 	xp = 0
 	level = 1
-	price = 500
+	price = 1500
