@@ -1,0 +1,12 @@
+Infantry,,,,
+Name,Health,Damage,Price,Multiplier
+Militia Spearman,10,1,10,1
+Veteran Militia Spearman,15,1,25,1.5
+Recruit Swordsman,25,2.5,62,3
+Swordsman,50,5,155,4.5
+Veteran Swordsman,75,8,200,6
+Lieutenant Swordsman,115,10,300,8
+Knight,200,20,500,11
+Black Knight,350,37,750,18
+Templar Knight,500,46,1000,28
+Dryadalum Knight,750,60,2000,40

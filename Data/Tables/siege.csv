@@ -1,0 +1,12 @@
+Siege,,,,
+Name,Health,Damage,Price,Multiplier
+Militia Torchers,100,5,5000,10
+Ladder Carriers,150,7,12500,15
+Wooden Ram,250,11,31375,30
+Siege Tower,500,18,78438,164
+Scorpion,750,77,101969,456
+Ballitsa,1150,284,152953,2861
+Fire Ballista,2000,500,244725,6340
+Onager,3500,930,391560,36520
+Catapult,5000,1843,509028,298565
+Trebuchet,7500,3908,1018056,3715748

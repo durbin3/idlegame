@@ -6,8 +6,8 @@
     <li><h2>Gameplay</h2>
         <ul>
             <li><s>add upgrades page</s></li>
-            <li></s>Switch gameplay loop to: Troop -> territory -> village -> money -> troop</s></li>
-            <li></s>Add more troop types</s></li>
+            <li><s>Switch gameplay loop to: Troop -> territory -> village -> money -> troop</s></li>
+            <li><s>Add more troop types</s></li>
             <li><s>Add troop type functionality (troops give resources)</s></li>
             <li>Add village buildings</li>
             <li>Implement troop counter metric</li>

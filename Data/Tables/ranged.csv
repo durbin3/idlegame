@@ -1,0 +1,12 @@
+Ranged,,,,
+Name,Health,Damage,Price,Multiplier
+Militia Archer,5,3,100,2.5
+Veteran Militia Archer,8,6,250,3.75
+Recruit Bowman,11,12,620,7.5
+Bowman,14,18,1550,21
+Veteran Bowman,19,24,2000,38
+Lieutenant Bowman,25,30,3000,112
+Crossbowman,35,40,5000,179
+Elite Crossbowman,49,64,7500,505
+Arbalist,73,89,10000,1752
+Dryadalum Archer,112,125,20000,7801

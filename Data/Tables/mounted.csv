@@ -1,0 +1,12 @@
+Mounted,,,,
+Name,Health,Damage,Price,Multiplier
+Militia Cavalry,7,2,250,5
+Veteran Militia Cavalry,12,2,625,7.5
+Recruit Horseman,20,3,1569,15
+Light Equite,27,7,3922,58
+Horse Archer,38,19,5098,131
+Veteran Horseman,55,47,7648,565
+Heavy Equite,82,69,12236,1065
+Heavy Lancer,127,106,19578,4293
+Elite Heavy Cavalry,206,169,25451,22869
+Dryadalum Cavalry,351,281,50903,170256
