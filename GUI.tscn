@@ -6,47 +6,41 @@
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=4]
 
 [node name="GUI" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 1923.0
-margin_bottom = 1030.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ButtonContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_left = 710.0
-margin_right = 1212.0
-margin_bottom = 28.0
+[node name="ButtonContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -248.28
+margin_top = 12.0136
+margin_right = 253.72
+margin_bottom = 40.0136
 size_flags_horizontal = 4
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="VBoxContainer/ButtonContainer"]
+[node name="Panel" type="Panel" parent="ButtonContainer"]
 margin_right = 502.0
 margin_bottom = 28.0
 theme = ExtResource( 1 )
 
-[node name="TopButtons" type="HBoxContainer" parent="VBoxContainer/ButtonContainer"]
+[node name="TopButtons" type="HBoxContainer" parent="ButtonContainer"]
 margin_right = 502.0
 margin_bottom = 28.0
 script = ExtResource( 3 )
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonContainer/TopButtons"]
+[node name="MarginContainer" type="MarginContainer" parent="ButtonContainer/TopButtons"]
 margin_right = 74.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
-[node name="Territory" type="Button" parent="VBoxContainer/ButtonContainer/TopButtons/MarginContainer"]
+[node name="Territory" type="Button" parent="ButtonContainer/TopButtons/MarginContainer"]
 margin_right = 74.0
 margin_bottom = 28.0
 grow_horizontal = 2
@@ -57,13 +51,13 @@ custom_colors/font_color = Color( 0.231373, 0.231373, 0.231373, 1 )
 custom_colors/font_color_hover = Color( 0.509804, 0.509804, 0.509804, 1 )
 text = "Territory"
 
-[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/ButtonContainer/TopButtons"]
+[node name="MarginContainer6" type="MarginContainer" parent="ButtonContainer/TopButtons"]
 margin_left = 78.0
 margin_right = 140.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
-[node name="Village" type="Button" parent="VBoxContainer/ButtonContainer/TopButtons/MarginContainer6"]
+[node name="Village" type="Button" parent="ButtonContainer/TopButtons/MarginContainer6"]
 margin_right = 62.0
 margin_bottom = 28.0
 grow_horizontal = 2
@@ -74,13 +68,13 @@ custom_colors/font_color = Color( 0.231373, 0.231373, 0.231373, 1 )
 custom_colors/font_color_hover = Color( 0.509804, 0.509804, 0.509804, 1 )
 text = "Village"
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/ButtonContainer/TopButtons"]
+[node name="MarginContainer2" type="MarginContainer" parent="ButtonContainer/TopButtons"]
 margin_left = 144.0
 margin_right = 224.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
-[node name="Upgrades" type="Button" parent="VBoxContainer/ButtonContainer/TopButtons/MarginContainer2"]
+[node name="Upgrades" type="Button" parent="ButtonContainer/TopButtons/MarginContainer2"]
 margin_right = 80.0
 margin_bottom = 28.0
 grow_horizontal = 2
@@ -95,13 +89,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/ButtonContainer/TopButtons"]
+[node name="MarginContainer3" type="MarginContainer" parent="ButtonContainer/TopButtons"]
 margin_left = 228.0
 margin_right = 340.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="VBoxContainer/ButtonContainer/TopButtons/MarginContainer3"]
+[node name="Button" type="Button" parent="ButtonContainer/TopButtons/MarginContainer3"]
 margin_right = 112.0
 margin_bottom = 28.0
 grow_horizontal = 2
@@ -116,13 +110,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/ButtonContainer/TopButtons"]
+[node name="MarginContainer4" type="MarginContainer" parent="ButtonContainer/TopButtons"]
 margin_left = 344.0
 margin_right = 395.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="VBoxContainer/ButtonContainer/TopButtons/MarginContainer4"]
+[node name="Button" type="Button" parent="ButtonContainer/TopButtons/MarginContainer4"]
 margin_right = 51.0
 margin_bottom = 28.0
 grow_horizontal = 2
@@ -137,13 +131,13 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/ButtonContainer/TopButtons"]
+[node name="MarginContainer5" type="MarginContainer" parent="ButtonContainer/TopButtons"]
 margin_left = 399.0
 margin_right = 455.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
-[node name="Menu" type="Button" parent="VBoxContainer/ButtonContainer/TopButtons/MarginContainer5"]
+[node name="Menu" type="Button" parent="ButtonContainer/TopButtons/MarginContainer5"]
 margin_right = 56.0
 margin_bottom = 28.0
 grow_horizontal = 2
@@ -158,7 +152,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/ButtonContainer/TopButtons"]
+[node name="MarginContainer7" type="MarginContainer" parent="ButtonContainer/TopButtons"]
 margin_left = 459.0
 margin_right = 502.0
 margin_bottom = 28.0
@@ -167,7 +161,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Exit" type="Button" parent="VBoxContainer/ButtonContainer/TopButtons/MarginContainer7"]
+[node name="Exit" type="Button" parent="ButtonContainer/TopButtons/MarginContainer7"]
 margin_right = 43.0
 margin_bottom = 28.0
 grow_horizontal = 2
@@ -182,28 +176,17 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Space" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 32.0
-margin_right = 1923.0
-margin_bottom = 979.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 983.0
-margin_right = 1923.0
-margin_bottom = 1030.0
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
-margin_right = 959.0
-margin_bottom = 47.0
-size_flags_horizontal = 3
-
-[node name="BalanceContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 963.0
-margin_right = 1923.0
-margin_bottom = 47.0
-size_flags_horizontal = 3
+[node name="BalanceContainer" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -581.0
+margin_top = -63.0
+margin_right = -30.0
+margin_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -211,51 +194,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/BalanceContainer"]
-margin_right = 960.0
-margin_bottom = 47.0
-
-[node name="BalanceSort" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/BalanceContainer"]
-margin_right = 960.0
-margin_bottom = 47.0
-
-[node name="Money_container" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/BalanceContainer/BalanceSort"]
-margin_right = 317.0
+[node name="HBoxContainer" type="HBoxContainer" parent="BalanceContainer"]
+margin_right = 551.0
 margin_bottom = 47.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Money_Amount" type="Label" parent="VBoxContainer/HBoxContainer/BalanceContainer/BalanceSort/Money_container"]
-margin_right = 39.0
-margin_bottom = 47.0
-theme = ExtResource( 1 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0.286275, 0.223529, 0.14902, 1 )
-text = "[x]"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Territory_container" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/BalanceContainer/BalanceSort"]
-margin_left = 321.0
-margin_right = 638.0
-margin_bottom = 47.0
-size_flags_horizontal = 3
-
-[node name="Territory" type="Label" parent="VBoxContainer/HBoxContainer/BalanceContainer/BalanceSort/Territory_container"]
+[node name="MarginContainer" type="MarginContainer" parent="BalanceContainer/HBoxContainer"]
 margin_right = 167.0
 margin_bottom = 47.0
-theme = ExtResource( 1 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0.286275, 0.223529, 0.14902, 1 )
-text = "Territory: "
-__meta__ = {
-"_editor_description_": ""
-}
+grow_horizontal = 0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
 
-[node name="Territory_Amount" type="Label" parent="VBoxContainer/HBoxContainer/BalanceContainer/BalanceSort/Territory_container"]
-margin_left = 171.0
-margin_right = 210.0
+[node name="Panel2" type="Panel" parent="BalanceContainer/HBoxContainer/MarginContainer"]
+margin_right = 167.0
 margin_bottom = 47.0
+size_flags_horizontal = 3
+
+[node name="Money_container" type="HBoxContainer" parent="BalanceContainer/HBoxContainer/MarginContainer"]
+margin_left = 71.0
+margin_top = 8.0
+margin_right = 95.0
+margin_bottom = 38.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Money_Amount" type="Label" parent="BalanceContainer/HBoxContainer/MarginContainer/Money_container"]
+margin_right = 24.0
+margin_bottom = 30.0
 theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.286275, 0.223529, 0.14902, 1 )
@@ -264,37 +233,129 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Troop_container" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/BalanceContainer/BalanceSort"]
-margin_left = 642.0
-margin_right = 960.0
+[node name="space2" type="MarginContainer" parent="BalanceContainer/HBoxContainer"]
+margin_left = 171.0
+margin_right = 187.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.48
+
+[node name="MarginContainer2" type="MarginContainer" parent="BalanceContainer/HBoxContainer"]
+margin_left = 191.0
+margin_right = 359.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Panel" type="Panel" parent="BalanceContainer/HBoxContainer/MarginContainer2"]
+margin_right = 168.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+
+[node name="Territory_container" type="HBoxContainer" parent="BalanceContainer/HBoxContainer/MarginContainer2"]
+margin_right = 168.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="space3" type="MarginContainer" parent="BalanceContainer/HBoxContainer/MarginContainer2/Territory_container"]
+margin_right = 11.0
 margin_bottom = 47.0
 size_flags_horizontal = 3
 
-[node name="Troops" type="Label" parent="VBoxContainer/HBoxContainer/BalanceContainer/BalanceSort/Troop_container"]
-margin_right = 143.0
-margin_bottom = 47.0
+[node name="Territory" type="Label" parent="BalanceContainer/HBoxContainer/MarginContainer2/Territory_container"]
+margin_left = 15.0
+margin_top = 8.0
+margin_right = 34.0
+margin_bottom = 38.0
+grow_horizontal = 0
+size_flags_horizontal = 2
 theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.286275, 0.223529, 0.14902, 1 )
-text = "Troops: "
+text = "T:"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Territory_Amount" type="Label" parent="BalanceContainer/HBoxContainer/MarginContainer2/Territory_container"]
+margin_left = 38.0
+margin_top = 8.0
+margin_right = 152.0
+margin_bottom = 38.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.36
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.286275, 0.223529, 0.14902, 1 )
+text = "[x]"
+percent_visible = -0.333333
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="space4" type="MarginContainer" parent="BalanceContainer/HBoxContainer/MarginContainer2/Territory_container"]
+margin_left = 156.0
+margin_right = 168.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+
+[node name="space" type="MarginContainer" parent="BalanceContainer/HBoxContainer"]
+margin_left = 363.0
+margin_right = 379.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.48
+
+[node name="MarginContainer3" type="MarginContainer" parent="BalanceContainer/HBoxContainer"]
+margin_left = 383.0
+margin_right = 551.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Panel3" type="Panel" parent="BalanceContainer/HBoxContainer/MarginContainer3"]
+margin_right = 168.0
+margin_bottom = 47.0
+
+[node name="Troop_container" type="HBoxContainer" parent="BalanceContainer/HBoxContainer/MarginContainer3"]
+margin_right = 168.0
+margin_bottom = 47.0
+size_flags_horizontal = 5
+
+[node name="Troops" type="Label" parent="BalanceContainer/HBoxContainer/MarginContainer3/Troop_container"]
+margin_top = 8.0
+margin_right = 82.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.286275, 0.223529, 0.14902, 1 )
+text = "Tps:"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
-[node name="Troop_Amount" type="Label" parent="VBoxContainer/HBoxContainer/BalanceContainer/BalanceSort/Troop_container"]
-margin_left = 147.0
-margin_right = 186.0
-margin_bottom = 47.0
+[node name="Troop_Amount" type="Label" parent="BalanceContainer/HBoxContainer/MarginContainer3/Troop_container"]
+margin_left = 86.0
+margin_top = 8.0
+margin_right = 168.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
 theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.286275, 0.223529, 0.14902, 1 )
 text = "[x]"
+align = 1
 __meta__ = {
 "_editor_description_": ""
 }
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/TopButtons/MarginContainer/Territory" to="VBoxContainer/ButtonContainer/TopButtons" method="_on_Territory_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/TopButtons/MarginContainer6/Village" to="VBoxContainer/ButtonContainer/TopButtons" method="_on_Village_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/TopButtons/MarginContainer2/Upgrades" to="VBoxContainer/ButtonContainer/TopButtons" method="_on_Upgrades_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/TopButtons/MarginContainer5/Menu" to="VBoxContainer/ButtonContainer/TopButtons" method="_on_Menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/TopButtons/MarginContainer7/Exit" to="VBoxContainer/ButtonContainer/TopButtons" method="_on_Exit_pressed"]
+[connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer/Territory" to="ButtonContainer/TopButtons" method="_on_Territory_pressed"]
+[connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer6/Village" to="ButtonContainer/TopButtons" method="_on_Village_pressed"]
+[connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer2/Upgrades" to="ButtonContainer/TopButtons" method="_on_Upgrades_pressed"]
+[connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer5/Menu" to="ButtonContainer/TopButtons" method="_on_Menu_pressed"]
+[connection signal="pressed" from="ButtonContainer/TopButtons/MarginContainer7/Exit" to="ButtonContainer/TopButtons" method="_on_Exit_pressed"]

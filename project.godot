@@ -58,14 +58,6 @@ config/icon="res://icon.png"
 
 Data="*res://Data/Data.tscn"
 
-[display]
-
-window/size/width=1920
-window/size/height=1080
-window/size/resizable=false
-window/size/borderless=true
-window/size/fullscreen=true
-
 [importer_defaults]
 
 csv={

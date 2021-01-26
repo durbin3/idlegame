@@ -3,7 +3,7 @@
 [ext_resource path="res://Fonts/new_dynamicfontdata.tres" type="DynamicFontData" id=1]
 
 [resource]
-size = 39
+size = 25
 outline_color = Color( 0.12549, 0.12549, 0.12549, 1 )
 use_mipmaps = true
 use_filter = true
