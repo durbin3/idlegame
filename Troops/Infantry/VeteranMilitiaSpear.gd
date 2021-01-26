@@ -16,6 +16,7 @@ func _ready():
 	xp = 0
 	level = 1
 	mult = 1.25
+	price = 50
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
