@@ -1,42 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Data/Data.gd" type="Script" id=1]
-[ext_resource path="res://Troops/Infantry/MilitiaSpear.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Troops/Infantry/Infantry.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Troops/Infantry/VeteranMilitiaSpear.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Troops/Ranged/Ranged.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Troops/Siege/MilitiaRam.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Troops/Mounted/MilitiaCavalry.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Troops/Mounted/Mounted.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Troops/Siege/Siege.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Troops/Ranged/MilitiaArcher.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Troops/Ranged/MilitiaCrossbowman.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Troops/Mounted/CavalryRecruit.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Troops/Siege/MilitiaTorchers.tscn" type="PackedScene" id=13]
 
 [node name="Data" type="Node2D"]
 script = ExtResource( 1 )
-
-[node name="Infantry" parent="." instance=ExtResource( 3 )]
-
-[node name="MilitiaSpear" parent="Infantry" instance=ExtResource( 2 )]
-
-[node name="VeteranMilitiaSpear" parent="Infantry" instance=ExtResource( 4 )]
-
-[node name="Ranged" parent="." instance=ExtResource( 5 )]
-
-[node name="MilitiaArcher" parent="Ranged" instance=ExtResource( 10 )]
-
-[node name="MilitiaCrossbowman" parent="Ranged" instance=ExtResource( 11 )]
-
-[node name="Mounted" parent="." instance=ExtResource( 8 )]
-
-[node name="MilitiaCavalry" parent="Mounted" instance=ExtResource( 7 )]
-
-[node name="CavalryRecruit" parent="Mounted" instance=ExtResource( 12 )]
-
-[node name="Siege" parent="." instance=ExtResource( 9 )]
-
-[node name="MilitiaRam" parent="Siege" instance=ExtResource( 6 )]
-
-[node name="MilitiaTorchers" parent="Siege" instance=ExtResource( 13 )]

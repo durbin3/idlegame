@@ -57,7 +57,6 @@ margin_right = 513.0
 margin_bottom = 316.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-max_columns = 2
 same_column_width = true
 
 [node name="Ranged" type="MarginContainer" parent="OuterContainer"]
@@ -99,7 +98,6 @@ margin_right = 513.0
 margin_bottom = 316.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-max_columns = 2
 same_column_width = true
 
 [node name="Mounted" type="MarginContainer" parent="OuterContainer"]
@@ -141,7 +139,6 @@ margin_right = 513.0
 margin_bottom = 316.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-max_columns = 2
 same_column_width = true
 
 [node name="Siege" type="MarginContainer" parent="OuterContainer"]
@@ -184,5 +181,4 @@ margin_right = 513.0
 margin_bottom = 316.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-max_columns = 2
 same_column_width = true

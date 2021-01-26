@@ -26,6 +26,7 @@ func update_panel():
 
 
 func _on_B_add_troop_pressed():
+	Data.money -= troop_selected.price
 	troop_selected.count += 1
 	update_panel()
 
