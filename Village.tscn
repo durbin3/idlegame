@@ -5,78 +5,80 @@
 
 [node name="Village" type="Node2D"]
 
-[node name="GUI" parent="." instance=ExtResource( 1 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 832.0
-margin_top = 331.0
-margin_right = 1014.0
-margin_bottom = 499.0
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 1 )]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+anchor_left = 0.25
+anchor_top = 0.12
+anchor_right = 0.75
+anchor_bottom = 0.85
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Slot1" type="MarginContainer" parent="GridContainer"]
-margin_right = 182.0
-margin_bottom = 168.0
+[node name="Slot1" type="MarginContainer" parent="CanvasLayer/GridContainer"]
+margin_right = 512.0
+margin_bottom = 438.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="GridContainer/Slot1"]
-margin_right = 182.0
-margin_bottom = 168.0
+[node name="Panel" type="Panel" parent="CanvasLayer/GridContainer/Slot1"]
+margin_right = 512.0
+margin_bottom = 438.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Slot1"]
-margin_right = 182.0
-margin_bottom = 168.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GridContainer/Slot1"]
+margin_right = 512.0
+margin_bottom = 438.0
 
-[node name="Space" type="MarginContainer" parent="GridContainer/Slot1/VBoxContainer"]
-margin_right = 182.0
-margin_bottom = 47.0
+[node name="Space" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 137.0
 size_flags_vertical = 3
 
-[node name="Middle" type="MarginContainer" parent="GridContainer/Slot1/VBoxContainer"]
-margin_top = 51.0
-margin_right = 182.0
-margin_bottom = 98.0
+[node name="Middle" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer"]
+margin_top = 141.0
+margin_right = 512.0
+margin_bottom = 278.0
 size_flags_vertical = 3
 
-[node name="BuyBuilding" type="MenuButton" parent="GridContainer/Slot1/VBoxContainer/Middle"]
+[node name="BuyBuilding" type="MenuButton" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer/Middle"]
 visible = false
-margin_left = 31.0
-margin_top = 13.0
-margin_right = 151.0
-margin_bottom = 33.0
+margin_left = 196.0
+margin_top = 58.0
+margin_right = 316.0
+margin_bottom = 78.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Buy Building Slot"
 flat = false
 
-[node name="BuyLand" type="Button" parent="GridContainer/Slot1/VBoxContainer/Middle"]
-margin_left = 57.0
-margin_top = 13.0
-margin_right = 124.0
-margin_bottom = 33.0
+[node name="BuyLand" type="Button" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer/Middle"]
+margin_left = 222.0
+margin_top = 58.0
+margin_right = 289.0
+margin_bottom = 78.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Buy land"
 
-[node name="Cost" type="Label" parent="GridContainer/Slot1/VBoxContainer"]
-margin_left = 78.0
-margin_top = 102.0
-margin_right = 103.0
-margin_bottom = 116.0
+[node name="Cost" type="Label" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer"]
+margin_left = 243.0
+margin_top = 282.0
+margin_right = 268.0
+margin_bottom = 296.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "text"
 
-[node name="Space3" type="MarginContainer" parent="GridContainer/Slot1/VBoxContainer"]
-margin_top = 120.0
-margin_right = 182.0
-margin_bottom = 168.0
+[node name="Space3" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer"]
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 438.0
 size_flags_vertical = 3
-[connection signal="pressed" from="GridContainer/Slot1/VBoxContainer/Middle/BuyLand" to="GridContainer/Slot1" method="_on_BuyLand_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Slot1/VBoxContainer/Middle/BuyLand" to="CanvasLayer/GridContainer/Slot1" method="_on_BuyLand_pressed"]
