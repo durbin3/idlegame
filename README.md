@@ -9,7 +9,9 @@
             <li><s>Switch gameplay loop to: Troop -> territory -> village -> money -> troop</s></li>
             <li><s>Add more troop types</s></li>
             <li><s>Add troop type functionality (troops give resources)</s></li>
-            <li>Add village buildings</li>
+            <li><s>Add village buildings</s></li>
+            <li>Add buy functionality to troop and village shops</li>
+            <li>Add cost to village and troop shops</li>
             <li>Implement troop counter metric</li>
             <li>Make troops in upgrades page add to unlocked list</li>
             <li>Make troops in troop panel greyed out if not unlocked</li>

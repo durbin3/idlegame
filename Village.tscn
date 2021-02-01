@@ -14,71 +14,399 @@ anchor_left = 0.25
 anchor_top = 0.12
 anchor_right = 0.75
 anchor_bottom = 0.85
+columns = 3
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Slot1" type="MarginContainer" parent="CanvasLayer/GridContainer"]
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/GridContainer/Slot1"]
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Land_space" type="VBoxContainer" parent="CanvasLayer/GridContainer/Slot1"]
+margin_right = 168.0
+margin_bottom = 217.0
+
+[node name="Space" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot1/Land_space"]
+margin_right = 168.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+
+[node name="Middle" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot1/Land_space"]
+margin_top = 67.0
+margin_right = 168.0
+margin_bottom = 131.0
+size_flags_vertical = 3
+
+[node name="BuyBuilding" type="MenuButton" parent="CanvasLayer/GridContainer/Slot1/Land_space/Middle"]
+visible = false
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 144.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy Building Slot"
+flat = false
+
+[node name="BuyLand" type="Button" parent="CanvasLayer/GridContainer/Slot1/Land_space/Middle"]
+margin_left = 50.0
+margin_top = 22.0
+margin_right = 117.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy land"
+
+[node name="Cost" type="Label" parent="CanvasLayer/GridContainer/Slot1/Land_space"]
+margin_left = 71.0
+margin_top = 135.0
+margin_right = 96.0
+margin_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "text"
+
+[node name="Space3" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot1/Land_space"]
+margin_top = 153.0
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_vertical = 3
+
+[node name="Slot2" type="MarginContainer" parent="CanvasLayer/GridContainer"]
+margin_left = 172.0
+margin_right = 340.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/GridContainer/Slot2"]
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Land_space" type="VBoxContainer" parent="CanvasLayer/GridContainer/Slot2"]
+margin_right = 168.0
+margin_bottom = 217.0
+
+[node name="Space" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot2/Land_space"]
+margin_right = 168.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+
+[node name="Middle" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot2/Land_space"]
+margin_top = 67.0
+margin_right = 168.0
+margin_bottom = 131.0
+size_flags_vertical = 3
+
+[node name="BuyBuilding" type="MenuButton" parent="CanvasLayer/GridContainer/Slot2/Land_space/Middle"]
+visible = false
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 144.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy Building Slot"
+flat = false
+
+[node name="BuyLand" type="Button" parent="CanvasLayer/GridContainer/Slot2/Land_space/Middle"]
+margin_left = 50.0
+margin_top = 22.0
+margin_right = 117.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy land"
+
+[node name="Cost" type="Label" parent="CanvasLayer/GridContainer/Slot2/Land_space"]
+margin_left = 71.0
+margin_top = 135.0
+margin_right = 96.0
+margin_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "text"
+
+[node name="Space3" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot2/Land_space"]
+margin_top = 153.0
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_vertical = 3
+
+[node name="Slot3" type="MarginContainer" parent="CanvasLayer/GridContainer"]
+margin_left = 344.0
+margin_right = 512.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/GridContainer/Slot3"]
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Land_space" type="VBoxContainer" parent="CanvasLayer/GridContainer/Slot3"]
+margin_right = 168.0
+margin_bottom = 217.0
+
+[node name="Space" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot3/Land_space"]
+margin_right = 168.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+
+[node name="Middle" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot3/Land_space"]
+margin_top = 67.0
+margin_right = 168.0
+margin_bottom = 131.0
+size_flags_vertical = 3
+
+[node name="BuyBuilding" type="MenuButton" parent="CanvasLayer/GridContainer/Slot3/Land_space/Middle"]
+visible = false
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 144.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy Building Slot"
+flat = false
+
+[node name="BuyLand" type="Button" parent="CanvasLayer/GridContainer/Slot3/Land_space/Middle"]
+margin_left = 50.0
+margin_top = 22.0
+margin_right = 117.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy land"
+
+[node name="Cost" type="Label" parent="CanvasLayer/GridContainer/Slot3/Land_space"]
+margin_left = 71.0
+margin_top = 135.0
+margin_right = 96.0
+margin_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "text"
+
+[node name="Space3" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot3/Land_space"]
+margin_top = 153.0
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_vertical = 3
+
+[node name="Slot4" type="MarginContainer" parent="CanvasLayer/GridContainer"]
+margin_top = 221.0
+margin_right = 168.0
+margin_bottom = 438.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/GridContainer/Slot4"]
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Land_space" type="VBoxContainer" parent="CanvasLayer/GridContainer/Slot4"]
+margin_right = 168.0
+margin_bottom = 217.0
+
+[node name="Space" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot4/Land_space"]
+margin_right = 168.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+
+[node name="Middle" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot4/Land_space"]
+margin_top = 67.0
+margin_right = 168.0
+margin_bottom = 131.0
+size_flags_vertical = 3
+
+[node name="BuyBuilding" type="MenuButton" parent="CanvasLayer/GridContainer/Slot4/Land_space/Middle"]
+visible = false
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 144.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy Building Slot"
+flat = false
+
+[node name="BuyLand" type="Button" parent="CanvasLayer/GridContainer/Slot4/Land_space/Middle"]
+margin_left = 50.0
+margin_top = 22.0
+margin_right = 117.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy land"
+
+[node name="Cost" type="Label" parent="CanvasLayer/GridContainer/Slot4/Land_space"]
+margin_left = 71.0
+margin_top = 135.0
+margin_right = 96.0
+margin_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "text"
+
+[node name="Space3" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot4/Land_space"]
+margin_top = 153.0
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_vertical = 3
+
+[node name="Slot5" type="MarginContainer" parent="CanvasLayer/GridContainer"]
+margin_left = 172.0
+margin_top = 221.0
+margin_right = 340.0
+margin_bottom = 438.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/GridContainer/Slot5"]
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Land_space" type="VBoxContainer" parent="CanvasLayer/GridContainer/Slot5"]
+margin_right = 168.0
+margin_bottom = 217.0
+
+[node name="Space" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot5/Land_space"]
+margin_right = 168.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+
+[node name="Middle" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot5/Land_space"]
+margin_top = 67.0
+margin_right = 168.0
+margin_bottom = 131.0
+size_flags_vertical = 3
+
+[node name="BuyBuilding" type="MenuButton" parent="CanvasLayer/GridContainer/Slot5/Land_space/Middle"]
+visible = false
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 144.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy Building Slot"
+flat = false
+
+[node name="BuyLand" type="Button" parent="CanvasLayer/GridContainer/Slot5/Land_space/Middle"]
+margin_left = 50.0
+margin_top = 22.0
+margin_right = 117.0
+margin_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy land"
+
+[node name="Cost" type="Label" parent="CanvasLayer/GridContainer/Slot5/Land_space"]
+margin_left = 71.0
+margin_top = 135.0
+margin_right = 96.0
+margin_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "text"
+
+[node name="Space3" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot5/Land_space"]
+margin_top = 153.0
+margin_right = 168.0
+margin_bottom = 217.0
+size_flags_vertical = 3
+
+[node name="Slot6" type="MarginContainer" parent="CanvasLayer/GridContainer"]
+margin_left = 344.0
+margin_top = 221.0
 margin_right = 512.0
 margin_bottom = 438.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="CanvasLayer/GridContainer/Slot1"]
-margin_right = 512.0
-margin_bottom = 438.0
+[node name="Panel" type="Panel" parent="CanvasLayer/GridContainer/Slot6"]
+margin_right = 168.0
+margin_bottom = 217.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GridContainer/Slot1"]
-margin_right = 512.0
-margin_bottom = 438.0
+[node name="Land_space" type="VBoxContainer" parent="CanvasLayer/GridContainer/Slot6"]
+margin_right = 168.0
+margin_bottom = 217.0
 
-[node name="Space" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer"]
-margin_right = 512.0
-margin_bottom = 137.0
+[node name="Space" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot6/Land_space"]
+margin_right = 168.0
+margin_bottom = 63.0
 size_flags_vertical = 3
 
-[node name="Middle" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer"]
-margin_top = 141.0
-margin_right = 512.0
-margin_bottom = 278.0
+[node name="Middle" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot6/Land_space"]
+margin_top = 67.0
+margin_right = 168.0
+margin_bottom = 131.0
 size_flags_vertical = 3
 
-[node name="BuyBuilding" type="MenuButton" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer/Middle"]
+[node name="BuyBuilding" type="MenuButton" parent="CanvasLayer/GridContainer/Slot6/Land_space/Middle"]
 visible = false
-margin_left = 196.0
-margin_top = 58.0
-margin_right = 316.0
-margin_bottom = 78.0
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 144.0
+margin_bottom = 42.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Buy Building Slot"
 flat = false
 
-[node name="BuyLand" type="Button" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer/Middle"]
-margin_left = 222.0
-margin_top = 58.0
-margin_right = 289.0
-margin_bottom = 78.0
+[node name="BuyLand" type="Button" parent="CanvasLayer/GridContainer/Slot6/Land_space/Middle"]
+margin_left = 50.0
+margin_top = 22.0
+margin_right = 117.0
+margin_bottom = 42.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Buy land"
 
-[node name="Cost" type="Label" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer"]
-margin_left = 243.0
-margin_top = 282.0
-margin_right = 268.0
-margin_bottom = 296.0
+[node name="Cost" type="Label" parent="CanvasLayer/GridContainer/Slot6/Land_space"]
+margin_left = 71.0
+margin_top = 135.0
+margin_right = 96.0
+margin_bottom = 149.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "text"
 
-[node name="Space3" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot1/VBoxContainer"]
-margin_top = 300.0
-margin_right = 512.0
-margin_bottom = 438.0
+[node name="Space3" type="MarginContainer" parent="CanvasLayer/GridContainer/Slot6/Land_space"]
+margin_top = 153.0
+margin_right = 168.0
+margin_bottom = 217.0
 size_flags_vertical = 3
-[connection signal="pressed" from="CanvasLayer/GridContainer/Slot1/VBoxContainer/Middle/BuyLand" to="CanvasLayer/GridContainer/Slot1" method="_on_BuyLand_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Slot1/Land_space/Middle/BuyLand" to="CanvasLayer/GridContainer/Slot1" method="_on_BuyLand_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Slot2/Land_space/Middle/BuyLand" to="CanvasLayer/GridContainer/Slot2" method="_on_BuyLand_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Slot3/Land_space/Middle/BuyLand" to="CanvasLayer/GridContainer/Slot3" method="_on_BuyLand_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Slot4/Land_space/Middle/BuyLand" to="CanvasLayer/GridContainer/Slot4" method="_on_BuyLand_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Slot5/Land_space/Middle/BuyLand" to="CanvasLayer/GridContainer/Slot5" method="_on_BuyLand_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Slot6/Land_space/Middle/BuyLand" to="CanvasLayer/GridContainer/Slot6" method="_on_BuyLand_pressed"]

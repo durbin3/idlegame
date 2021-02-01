@@ -1,0 +1,9 @@
+Name,Type,Money Price,Land Price,Multiplier
+Dirt Hut,money,0,10,1
+Stone Hut,money,50,50,2.5
+Log Cabin,money,200,250,6
+Tavern,money,1000,300,10
+Stone House,money,5000,100,25
+Barracks,troop,50,10,10
+Barracks MK II,troop,500,0,50
+Barracks MK III,troop,5000,0,150

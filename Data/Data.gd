@@ -31,7 +31,26 @@ func fetch_table_values():
 	fetch_ranged()
 	fetch_mounted()
 	fetch_siege()
+	fetch_village()
 	pass
+
+func fetch_village():
+	var file = File.new()
+	file.open("res://Data/Tables/village.csv", file.READ)
+	while (!file.eof_reached()):
+		var line = file.get_csv_line()
+		if line[0] == "Name" or line[0] == "":
+			pass
+		else:
+			print(line)
+			var new_building = Building.new()
+			new_building.name = str(line[0])
+			new_building.type = str(line[1])
+			new_building.money_price = int(line[2])
+			new_building.land_price = int(line[3])
+			new_building.multiplier = float(line[4])
+			buildings.append(new_building)
+	file.close()
 
 func fetch_infantry():
 	var file = File.new()
